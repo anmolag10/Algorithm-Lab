@@ -2,22 +2,28 @@
 using namespace std;
 int selectionsort( int arr[], int size)
 {
+int count =0;
 int key,j;
   for( int i=0;i<size-1;i++)
-   {  int k =i;
+   { count ++; count ++;
+    int k =i;
+count ++;
      for( j=i+1; j<size; j++)
-     {
+     {   count ++; count ++;
       if(arr[j]<arr[k])
-          k=j;
+          k=j; count ++;
      }
-   swap(arr[i],arr[k]);
+   swap(arr[i],arr[k]); count ++; count ++; count ++;
    }
+
+return count;
 } 
 void display( int arr[], int size)
 {
   cout<<"Sorted Array"<<endl;
   for( int i=0; i<size;i++)
     cout<<arr[i]<<"\t";
+  cout<<endl;
 }
 
 int  arrinput(int arr[])
@@ -33,7 +39,6 @@ int main()
 {
   int arr[100];
   int size=arrinput(arr);
- selectionsort(arr,size);
+ cout<<"Total Steps:"<<selectionsort(arr,size)<<endl;
  display(arr,size);
 }
-  
